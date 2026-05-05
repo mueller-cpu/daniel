@@ -1,4 +1,4 @@
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect } from "react";
 
 // Brand palette ----------------------------------------------------
 const C = {
@@ -114,6 +114,10 @@ export default function App() {
   const [cardioMin, setCardioMin] = useState(0);
   const [foodThoughts, setFoodThoughts] = useState(3);
   const [bingeHistory, setBingeHistory] = useState(false);
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "auto" });
+  }, [step]);
 
   const result = useMemo(
     () =>
